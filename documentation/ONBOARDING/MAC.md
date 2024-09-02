@@ -1,1 +1,3 @@
-mac instructions
+# Mac
+
+Mac onboarding instructions.
