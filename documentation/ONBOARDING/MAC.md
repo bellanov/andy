@@ -20,7 +20,7 @@ Install a sophisticated *SHELL* client for terminal command execution.
 
 ### 4. Install Package Manager (brew)
 
-Install a *Package Manager* to standardize the set up of task execution envirronmeents.
+Install a *Package Manager* to standardize the set up of task execution environments.
 
 ## Install Software
 
