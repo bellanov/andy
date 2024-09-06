@@ -25,4 +25,3 @@ Install a *Package Manager* to standardize the set up of task execution environm
 ## Install Software
 
 With the initial setup complete, software can now be installed.
-
