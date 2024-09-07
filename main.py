@@ -1,7 +1,14 @@
+
 import pandas as pd
 import logging
 import requests
+from requests.exceptions import ConnectionError
 from concurrent.futures import ThreadPoolExecutor
+import concurrent.futures
+import os
+from dotenv import load_dotenv
+
+API_URL = os.getenv('API_URL', 'https://api.example.com/data')
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -16,10 +23,18 @@ def extract_dummy_data() -> pd.DataFrame:
     logging.info("Extracting dummy data")
     return pd.DataFrame(dummy_data)
 
-def extract_api_data() -> pd.DataFrame:
-    logging.info("Extracting data from external API")
-    response = requests.get("https://jsonplaceholder.typicode.com/users")
-    return pd.DataFrame(response.json())
+def extract_api_data():
+    try:
+        response = requests.get(API_URL, timeout=10)
+        response.raise_for_status()
+        return response.json()
+    except ConnectionError as e:
+        logging.error(f"Failed to connect to {API_URL}: {e}")
+        return None
+    except requests.RequestException as e:
+        logging.error(f"API request failed: {e}")
+        return None
+
 
 def extract() -> pd.DataFrame:
     with ThreadPoolExecutor() as executor:
@@ -29,7 +44,9 @@ def extract() -> pd.DataFrame:
         dummy_data = dummy_future.result()
         api_data = api_future.result()
     
-    return pd.concat([dummy_data, api_data], ignore_index=True)
+    if api_data is None:
+        return dummy_data
+    return pd.concat([dummy_data, pd.DataFrame(api_data)], ignore_index=True)
 
 def transform(data: pd.DataFrame) -> pd.DataFrame:
     logging.info("Transforming data")
@@ -41,10 +58,10 @@ def transform(data: pd.DataFrame) -> pd.DataFrame:
         data['birth_year'] = 2023 - data['age']
     return data
 
-def load(data: pd.DataFrame):
+def load(data: pd.DataFrame, output_prefix: str):
     logging.info("Loading data")
-    data.to_csv('processed_data.csv', index=False)
-    data.to_json('processed_data.json', orient='records')
+    data.to_csv(f'{output_prefix}.csv', index=False)
+    data.to_json(f'{output_prefix}.json', orient='records')
     logging.info("Data loaded successfully")
 
 def data_entry(data: pd.DataFrame) -> pd.DataFrame:
@@ -54,13 +71,11 @@ def data_entry(data: pd.DataFrame) -> pd.DataFrame:
 
 def quality_assurance(data):
     logging.info("Performing quality assurance checks")
-    # Convert dictionary columns to strings before dropping duplicates
     for col in data.columns:
         if data[col].dtype == 'object':
             data[col] = data[col].apply(lambda x: str(x) if isinstance(x, dict) else x)
     
     data = data.drop_duplicates()
-    # ... rest of the function
     return data
 
 def etl_pipeline():
@@ -82,12 +97,12 @@ def etl_pipeline():
         logging.info(f"Quality assurance completed. {len(clean_data)} records remaining")
         
         # Load
-        load(clean_data)
+        load(clean_data, 'output')
         
         logging.info("ETL pipeline completed successfully")
     except Exception as e:
         logging.error(f"ETL pipeline failed: {str(e)}")
-        raise  # Re-raise the exception for debugging purposes
+        raise
 
 if __name__ == "__main__":
     etl_pipeline()
