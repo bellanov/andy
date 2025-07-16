@@ -11,3 +11,11 @@ The following *languages* and *tools* are commonly used amongst **Andy** project
 - Kubernetes
 - GitHub / SSH Keys
 - BASH / PowerShell 
+
+## PowerShell
+
+Had to execute the following command to enable local PowerShell _script execution_.
+
+```sh
+set-executionpolicy remotesigned
+```
