@@ -68,4 +68,8 @@ brew install git
 
 ## Google Cloud CLI (gcloud)
 
-[minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Fx86-64%2Fstable%2Fbinary+download) is local Kubernetes, focusing on making it easy to learn and develop for *Kubernetes*.
+[gcloud](https://cloud.google.com/sdk/docs/install) is a CLI tool that enables interactions with *Google Cloud Platform (GCP)*.
+
+## Postman
+
+[Postman](https://www.postman.com/) is a popular tool used to make *web requests*. It is very useful in testing REST APIs before consuming them within your application. You can also save and share requests as **collections**.
