@@ -91,3 +91,7 @@ brew install watch
 ## Postman
 
 [Postman](https://www.postman.com/) is a popular tool used to make *web requests*. It is very useful in testing REST APIs before consuming them within your application. You can also save and share requests as **collections**.
+
+## Terraform
+
+[Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) is an *infrastructure as code* tool that lets you build, change, and version infrastructure safely and efficiently.
