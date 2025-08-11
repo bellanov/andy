@@ -46,6 +46,24 @@ Node Version Manager (NVM) is a free and open source distributed version control
 brew install nvm
 ```
 
+### shellcheck
+
+[shellcheck](https://formulae.brew.sh/formula/shellcheck) is a *static analysis* and *lint* tool, for (ba)sh scripts.
+
+```sh
+# Install shellcheck
+brew install shellcheck
+```
+
+### watch
+
+[watch](https://formulae.brew.sh/formula/watch) is a *Unix* tool used to repeatedly **execute** and **monitor** a given command.
+
+```sh
+# Install watch
+brew install watch
+```
+
 ## Oh My ZSH
 
 [Oh My ZSH](https://ohmyz.sh/#install) is a powerfull **SHELL** in Unix environments that sports a lot of features and integrations that simplify interactions with the *terminal*.
