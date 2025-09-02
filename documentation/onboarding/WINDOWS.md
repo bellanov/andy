@@ -28,7 +28,7 @@ choco install nodejs-lts
 
 ## Minikube
 
-[minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Fx86-64%2Fstable%2Fbinary+download) is local Kubernetes, focusing on making it easy to learn and develop for *Kubernetes*.
+[minikube](https://minikube.sigs.k8s.io/docs/start/#windows) is local Kubernetes, focusing on making it easy to learn and develop for *Kubernetes*.
 
 ## Google Cloud CLI (gcloud)
 
