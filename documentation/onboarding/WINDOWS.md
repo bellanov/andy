@@ -4,7 +4,7 @@ Windows onboarding instructions.
 
 ## Chocolatey
 
-[Chocolatey](https://brew.sh/) is a very popular package manager for both *Windows*. It simplifies the process of installing packages, enabling developer environments to stay in sync.
+[Chocolatey](https://chocolatey.org/) is a very popular package manager for both *Windows*. It simplifies the process of installing packages, enabling developer environments to stay in sync.
 
 ### NodeJS
 
