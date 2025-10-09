@@ -32,7 +32,7 @@ set-executionpolicy remotesigned
 
 ## Windows Subsystem for Linux (WSL)
 
-[Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/about) s a feature of Windows that allows you to run a Linux environment on your Windows machine, without the need for a separate virtual machine or dual booting.
+[Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/about) is a feature of Windows that allows you to run a Linux environment on your Windows machine, without the need for a separate virtual machine or dual booting.
 
 For file Access, Use `/mnt/c/...` for Windows files; keep projects in *Linux home* for speed.
 
