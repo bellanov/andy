@@ -46,10 +46,10 @@ wsl --install
 # https://apps.microsoft.com/detail/9pdxgncfsczv?hl=en-US&gl=US
 
 # Update Packages
-sudo apt update && sudo apt upgrade -y.
+sudo apt update && sudo apt upgrade -y
 
 # Set WSL2 Default
-wsl --set-default-version 2.
+wsl --set-default-version 2
 
 # Install Dev Tools
 sudo apt install build-essential git curl -y
