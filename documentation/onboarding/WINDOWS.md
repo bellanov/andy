@@ -52,7 +52,7 @@ sudo apt update && sudo apt upgrade -y.
 wsl --set-default-version 2.
 
 # Install Dev Tools
-sudo apt install build-essential git curl -y.
+sudo apt install build-essential git curl -y
 
 # VS Code Integration: Install VS Code + Remote - WSL extension for coding.
 # https://code.visualstudio.com/docs/remote/wsl
