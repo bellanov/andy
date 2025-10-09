@@ -50,3 +50,35 @@ Had to execute the following command to enable local PowerShell _script executio
 ```sh
 set-executionpolicy remotesigned
 ```
+
+## WSL
+
+[Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/about) s a feature of Windows that allows you to run a Linux environment on your Windows machine, without the need for a separate virtual machine or dual booting.
+
+For file Access, Use `/mnt/c/...` for Windows files; keep projects in *Linux home* for speed.
+
+Follow the steps below to install WSL and the **Ubuntu** distro.
+
+```sh
+# To enable WSL, execute the following command in PowerShell (Admin) → reboot.
+wsl --install
+
+# Install Linux Distro: Get Ubuntu/Debian from Microsoft Store → set username/password.
+# https://apps.microsoft.com/detail/9pdxgncfsczv?hl=en-US&gl=US
+
+# Update Packages
+sudo apt update && sudo apt upgrade -y.
+
+# Set WSL2 Default
+wsl --set-default-version 2.
+
+# Install Dev Tools
+udo apt install build-essential git curl -y.
+
+# VS Code Integration: Install VS Code + Remote - WSL extension for coding.
+# https://code.visualstudio.com/docs/remote/wsl
+
+# To launch a folder in VS Code, execute the following in the WSL terminal
+code ./folder
+
+```
