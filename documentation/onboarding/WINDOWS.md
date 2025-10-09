@@ -2,18 +2,6 @@
 
 Windows onboarding instructions.
 
-## Chocolatey
-
-[Chocolatey](https://chocolatey.org/) is a very popular package manager for both *Windows*. It simplifies the process of installing packages, enabling developer environments to stay in sync.
-
-### NodeJS
-
-*Node.js* is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.
-
-```sh
-choco install nodejs-lts
-```
-
 ## Visual Studio Code
 
 [Visual Studio Code](https://code.visualstudio.com/) is a very powerful code editor. It enables you to work in any programming language (i.e., NodeJS, Python).
@@ -30,18 +18,9 @@ choco install nodejs-lts
 
 [minikube](https://minikube.sigs.k8s.io/docs/start/#windows) is local Kubernetes, focusing on making it easy to learn and develop for *Kubernetes*.
 
-## Google Cloud CLI (gcloud)
-
-[gcloud](https://cloud.google.com/sdk/docs/install) is a CLI tool that enables interactions with *Google Cloud Platform (GCP)*.
-
 ## Postman
 
 [Postman](https://www.postman.com/) is a popular tool used to make *web requests*. It is very useful in testing REST APIs before consuming them within your application. You can also save and share requests as **collections**.
-
-## Terraform
-
-[Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) is an *infrastructure as code* tool that lets you build, change, and version infrastructure safely and efficiently.
-
 
 ## PowerShell
 
@@ -51,7 +30,7 @@ Had to execute the following command to enable local PowerShell _script executio
 set-executionpolicy remotesigned
 ```
 
-## WSL
+## Windoes Subsystem for Linux (WSL)
 
 [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/about) s a feature of Windows that allows you to run a Linux environment on your Windows machine, without the need for a separate virtual machine or dual booting.
 
@@ -73,12 +52,11 @@ sudo apt update && sudo apt upgrade -y.
 wsl --set-default-version 2.
 
 # Install Dev Tools
-udo apt install build-essential git curl -y.
+sudo apt install build-essential git curl -y.
 
 # VS Code Integration: Install VS Code + Remote - WSL extension for coding.
 # https://code.visualstudio.com/docs/remote/wsl
 
 # To launch a folder in VS Code, execute the following in the WSL terminal
 code ./folder
-
 ```
